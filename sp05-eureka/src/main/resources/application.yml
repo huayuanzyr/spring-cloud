@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 2001    #默认8761
+eureka:
+  instance:
+    #主机名:euerka集群中使用hostname来区分多态服务器
+    hostname: eureka1
+  server:
+    #自我保护模式   默认开启    开发期间可关闭   生产环境下应该开启
+    enable-self-preservation: false
+  client:
+    #集群中多台服务器之间要互相注册
+    #单台服务器不注册也不拉取
+    register-with-eureka: false
+    #集群中多台服务器之间要互相拉取
+    fetch-registry: false
